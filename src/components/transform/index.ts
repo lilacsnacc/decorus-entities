@@ -1,5 +1,4 @@
-import { Component } from ".."
-import { Entity } from "../.."
+import { Component, createComponent } from ".."
 
 type TransformType = {
   x: number,
@@ -7,6 +6,4 @@ type TransformType = {
   z: number,
 }
 
-export const defaultTransform = { x: 0, y: 0, z: 0 }
-
-export const Transform: Component<TransformType> = new WeakMap<Entity, TransformType>()
+export const Transform: Component<TransformType> = createComponent(() => ({ x: 0, y: 0, z: 0 }))

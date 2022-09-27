@@ -1,8 +1,9 @@
-import { defaultTransform, Transform } from ".";
+import { Transform } from ".";
 
 test('Transform', () => {
-  const entity = { id: 'derp' }
-  Transform.set(entity, defaultTransform)
+  const entity = new WeakSet()
 
-  expect(Transform.get(entity)).toBe(defaultTransform)
+  entity.add(Transform.set(entity, Transform.getDefault()))
+
+  expect(Transform.get(entity)).toStrictEqual(Transform.getDefault())
 })

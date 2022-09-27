@@ -1,26 +1,27 @@
 {
   "name": "decorus-entities",
-  "version": "1.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest -c jestconfig.json",
-    "build": "tsc",
-    "prepublishOnly": "npm test",
-    "prepare": "npm run build",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags"
+    "start": "cd test-stage && npm start",
+    "build": "tsc"
   },
   "author": "lilac-snacc",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@types/jest": "^28.1.3",
+    "@types/node": "^18.0.6",
     "jest": "^28.1.1",
-    "ts-jest": "^28.0.5",
+    "ts-jest": "^28.0.7",
     "typescript": "^4.7.4"
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "babylonjs": "^5.25.0",
+    "babylonjs-loaders": "^5.25.0"
+  }
 }
